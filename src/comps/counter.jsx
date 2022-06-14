@@ -6,6 +6,7 @@ class Counter extends Component {
 
         imgUrl: "https://picsum.photos/200",
 
+        // tags: [],
         tags: ["tag1", "tag2", "tag3"],
     };
 
@@ -13,6 +14,18 @@ class Counter extends Component {
     //     fontSize: 20,
     //     fontWeight: "bold",
     // };
+
+    renderTags() {
+        if (this.state.tags.length === 0) return <p>There are no tags!</p>;
+
+        return (
+            <ul>
+                {this.state.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                ))}
+            </ul>
+        );
+    }
 
     render() {
         return (
@@ -36,11 +49,15 @@ class Counter extends Component {
 
                 <button className="btn btn-secondary btn-sm">Increment</button>
 
-                <ul>
+                {/* <ul>
                     {this.state.tags.map((tag) => (
                         <li key={tag}>{tag}</li>
                     ))}
-                </ul>
+                </ul> */}
+                <div>
+                    {this.state.tags.length !== 0 && "Please create a new tag!"}
+                </div>
+                {this.renderTags()}
             </React.Fragment>
         );
     }
