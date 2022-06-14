@@ -27,6 +27,10 @@ class Counter extends Component {
         );
     }
 
+    handleIncrement() {
+        console.log("increment");
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -47,7 +51,12 @@ class Counter extends Component {
                     Sum: {this.formatCount()}
                 </span>
 
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button
+                    onClick={this.handleIncrement}
+                    className="btn btn-secondary btn-sm"
+                >
+                    Increment
+                </button>
 
                 {/* <ul>
                     {this.state.tags.map((tag) => (
