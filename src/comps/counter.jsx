@@ -5,6 +5,8 @@ class Counter extends Component {
         count: 1,
 
         imgUrl: "https://picsum.photos/200",
+
+        tags: ["tag1", "tag2", "tag3"],
     };
 
     // styles = {
@@ -33,6 +35,12 @@ class Counter extends Component {
                 </span>
 
                 <button className="btn btn-secondary btn-sm">Increment</button>
+
+                <ul>
+                    {this.state.tags.map((tag) => (
+                        <li key={tag}>{tag}</li>
+                    ))}
+                </ul>
             </React.Fragment>
         );
     }
