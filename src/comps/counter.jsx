@@ -27,9 +27,16 @@ class Counter extends Component {
         );
     }
 
-    handleIncrement() {
-        console.log("increment");
-    }
+    // constructor() {
+    //     super();
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+    // handleIncrement() {
+    //     console.log("increment", this);
+    // }
+    handleIncrement = () => {
+        console.log("increment", this);
+    };
 
     render() {
         return (
