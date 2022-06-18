@@ -23,10 +23,10 @@ class Counters extends Component {
                 {this.state.counters.map((c) => (
                     <Counter
                         key={c.id}
-                        value={c.value}
-                        selected
-                        id={c.id}
                         onDelete={this.handleDelete}
+                        // value={c.value}
+                        // id={c.id}
+                        counter={c}
                     >
                         <h6>Children props: Counter {c.id}</h6>
                     </Counter>

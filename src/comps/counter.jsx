@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
     state = {
         // count: 0,
-        value: this.props.value,
+        value: this.props.counter.value,
 
         imgUrl: "https://picsum.photos/200",
 
@@ -51,7 +51,7 @@ class Counter extends Component {
             // <React.Fragment>
             <div>
                 {this.props.children}
-                <h6>or normal props: counter {this.props.id}</h6>
+                <h6>or normal props: counter {this.props.counter.id}</h6>
 
                 {/* <img src={this.state.imgUrl} alt="" /> */}
 
@@ -95,7 +95,7 @@ class Counter extends Component {
                 {this.renderTags()} */}
 
                 <button
-                    onClick={() => this.props.onDelete(this.props.id)}
+                    onClick={() => this.props.onDelete(this.props.counter.id)}
                     className="btn btn-danger btn-sm m-2"
                 >
                     Delete
