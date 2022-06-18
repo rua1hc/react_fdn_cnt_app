@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
     state = {
-        count: 1,
+        count: 0,
 
         imgUrl: "https://picsum.photos/200",
 
@@ -38,14 +38,15 @@ class Counter extends Component {
         // console.log("increment", this);
         this.setState({ count: this.state.count + 1 });
     };
-    handleIncrement_product = (product) => {
-        console.log("product");
+    handleIncrement_product = () => {
+        console.log("product id later");
         this.setState({ count: this.state.count + 1 });
     };
 
     render() {
         return (
-            <React.Fragment>
+            // <React.Fragment>
+            <div>
                 {/* <img src={this.state.imgUrl} alt="" /> */}
 
                 {/* <span>Sum: {this.state.count}</span> */}
@@ -60,7 +61,8 @@ class Counter extends Component {
                     Sum: {this.formatCount()}
                 </span> */}
                 <span className={this.getBadgeClasses()}>
-                    Sum: {this.formatCount()}
+                    {/* Sum: {this.formatCount()} */}
+                    {this.formatCount()}
                 </span>
 
                 {/* <button
@@ -70,7 +72,7 @@ class Counter extends Component {
                     Increment
                 </button> */}
                 <button
-                    onClick={() => this.handleIncrement_product(product)}
+                    onClick={() => this.handleIncrement_product()}
                     className="btn btn-secondary btn-sm"
                 >
                     Increment
@@ -81,11 +83,12 @@ class Counter extends Component {
                         <li key={tag}>{tag}</li>
                     ))}
                 </ul> */}
-                <div>
+                {/* <div>
                     {this.state.tags.length !== 0 && "Please create a new tag!"}
                 </div>
-                {this.renderTags()}
-            </React.Fragment>
+                {this.renderTags()} */}
+            </div>
+            // </React.Fragment>
         );
     }
 
