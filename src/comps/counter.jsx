@@ -50,6 +50,9 @@ class Counter extends Component {
         return (
             // <React.Fragment>
             <div>
+                {this.props.children}
+                <h4>or normal props: counter {this.props.id}</h4>
+
                 {/* <img src={this.state.imgUrl} alt="" /> */}
 
                 {/* <span>Sum: {this.state.count}</span> */}

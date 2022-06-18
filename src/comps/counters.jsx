@@ -16,7 +16,9 @@ class Counters extends Component {
         return (
             <div>
                 {this.state.counters.map((c) => (
-                    <Counter key={c.id} value={c.value} selected />
+                    <Counter key={c.id} value={c.value} selected id={c.id}>
+                        <h4>Children props: Counter {c.id}</h4>
+                    </Counter>
                 ))}
             </div>
         );
