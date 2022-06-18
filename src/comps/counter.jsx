@@ -51,7 +51,7 @@ class Counter extends Component {
             // <React.Fragment>
             <div>
                 {this.props.children}
-                <h4>or normal props: counter {this.props.id}</h4>
+                <h6>or normal props: counter {this.props.id}</h6>
 
                 {/* <img src={this.state.imgUrl} alt="" /> */}
 
@@ -93,6 +93,13 @@ class Counter extends Component {
                     {this.state.tags.length !== 0 && "Please create a new tag!"}
                 </div>
                 {this.renderTags()} */}
+
+                <button
+                    onClick={() => this.props.onDelete(this.props.id)}
+                    className="btn btn-danger btn-sm m-2"
+                >
+                    Delete
+                </button>
             </div>
             // </React.Fragment>
         );
