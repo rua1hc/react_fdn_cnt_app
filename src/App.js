@@ -8,6 +8,16 @@ import Counters from "./comps/counters";
 
 class App extends Component {
     // function App() {
+
+    constructor(props) {
+        super(props);
+        console.log("App - Constructor", this.props);
+    }
+
+    componentDidMount() {
+        console.log("App - Mounted");
+    }
+
     state = {
         counters: [
             { id: 1, value: 5 },
