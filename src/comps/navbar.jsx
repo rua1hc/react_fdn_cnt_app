@@ -19,3 +19,21 @@ class NavBar extends Component {
 }
 
 export default NavBar;
+
+// Stateless Functional Component
+const NavBar2 = (props) => {
+    return (
+        <nav className="navbar navbar-light bg-light">
+            <div className="container-fluid">
+                <a className="navbar-brand fw-bold" href="#">
+                    Navbar2
+                    <span className="badge rounded-pill bg-success  mx-2 ">
+                        {props.totalCounters}
+                    </span>
+                </a>
+            </div>
+        </nav>
+    );
+};
+
+// export default NavBar2;
