@@ -21,14 +21,18 @@ class NavBar extends Component {
 export default NavBar;
 
 // Stateless Functional Component
-const NavBar2 = (props) => {
+
+// const NavBar2 = (props) => {
+//detructuring arguments
+const NavBar2 = ({ totalCounters }) => {
     return (
         <nav className="navbar navbar-light bg-light">
             <div className="container-fluid">
                 <a className="navbar-brand fw-bold" href="#">
                     Navbar2
                     <span className="badge rounded-pill bg-success  mx-2 ">
-                        {props.totalCounters}
+                        {/* {props.totalCounters} */}
+                        {totalCounters}
                     </span>
                 </a>
             </div>
