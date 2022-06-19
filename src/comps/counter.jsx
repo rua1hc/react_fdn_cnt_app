@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Counter extends Component {
     state = {
         // count: 0,
-        value: this.props.counter.value,
+        // value: this.props.counter.value,
 
         imgUrl: "https://picsum.photos/200",
 
@@ -35,14 +35,14 @@ class Counter extends Component {
     // handleIncrement() {
     //     console.log("increment", this);
     // }
-    handleIncrement = () => {
-        // console.log("increment", this);
-        this.setState({ value: this.state.value + 1 });
-    };
-    handleIncrement_product = () => {
-        console.log("product id later");
-        this.setState({ value: this.state.value + 1 });
-    };
+    // handleIncrement = () => {
+    //     // console.log("increment", this);
+    //     this.setState({ value: this.state.value + 1 });
+    // };
+    // handleIncrement_product = () => {
+    //     console.log("product id later");
+    //     this.setState({ value: this.state.value + 1 });
+    // };
 
     render() {
         console.log("props", this.props);
@@ -78,7 +78,8 @@ class Counter extends Component {
                     Increment
                 </button> */}
                 <button
-                    onClick={() => this.handleIncrement_product()}
+                    // onClick={() => this.handleIncrement_product()}
+                    onClick={() => this.props.onIncrement(this.props.counter)}
                     className="btn btn-secondary btn-sm"
                 >
                     Increment
@@ -107,12 +108,12 @@ class Counter extends Component {
 
     getBadgeClasses() {
         let classes = "badge m-2 bg-";
-        classes += this.state.value === 0 ? "warning" : "primary";
+        classes += this.props.counter.value === 0 ? "warning" : "primary";
         return classes;
     }
 
     formatCount() {
-        const { value: value } = this.state;
+        const { value } = this.props.counter;
         return value === 0 ? "Zero" : value;
     }
 }
